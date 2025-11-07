@@ -630,8 +630,8 @@ function ResponsiveIndustryCard({
           style={{ rotate: rotate1 }}
           className="absolute -top-6 -left-4 sm:-top-8 sm:-left-6 lg:-top-14 lg:-left-8 
                      w-20 h-20 sm:w-28 sm:h-28 lg:w-44 lg:h-44 
-                     rounded-full border-2 sm:border-3 lg:border-4 border-white 
-                     shadow-lg sm:shadow-xl lg:shadow-2xl overflow-hidden z-10"
+                     rounded-full 
+                      overflow-hidden z-10"
         >
           <Image
             src={industry.roundImage}
@@ -646,8 +646,7 @@ function ResponsiveIndustryCard({
           style={{ rotate: rotate2 }}
           className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 lg:-top-8 lg:-right-8 
                      w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28 
-                     rounded-full border-2 sm:border-3 lg:border-4 border-white 
-                     shadow-lg sm:shadow-xl lg:shadow-2xl overflow-hidden z-10"
+                     rounded-full overflow-hidden z-10"
         >
           <Image
             src={industry.roundImage}
@@ -662,8 +661,7 @@ function ResponsiveIndustryCard({
           style={{ rotate: rotate3 }}
           className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 lg:-bottom-8 lg:-left-8 
                      w-20 h-20 sm:w-24 sm:h-24 lg:w-36 lg:h-36 
-                     rounded-full border-2 sm:border-3 lg:border-4 border-white 
-                     shadow-lg sm:shadow-xl lg:shadow-2xl overflow-hidden z-10"
+                     rounded-full overflow-hidden z-10"
         >
           <Image
             src={industry.roundImage}
