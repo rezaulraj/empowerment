@@ -218,7 +218,7 @@ export default function AgentHero() {
                 variants={itemVariants}
                 className="text-2xl sm:text-3xl text-white/90 mb-8 leading-relaxed font-light"
               >
-                Build Your Legacy with India's
+                Build Your Legacy with Our
                 <span className="text-[#E23D51] font-semibold">
                   {" "}
                   Most Trusted{" "}
