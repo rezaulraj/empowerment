@@ -500,14 +500,14 @@ export default function Industries() {
     </section>
   );
 }
-
+interface ResponsiveIndustryCardProps {
+  industry: Industry;
+  index: number;
+}
 function ResponsiveIndustryCard({
   industry,
   index,
-}: {
-  industry: any;
-  index: number;
-}) {
+}: ResponsiveIndustryCardProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const isEven = index % 2 === 0;
