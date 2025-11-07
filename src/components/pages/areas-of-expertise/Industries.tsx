@@ -676,8 +676,7 @@ function ResponsiveIndustryCard({
           style={{ rotate: rotate4 }}
           className="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6 lg:-bottom-14 lg:-right-8 
                      w-20 h-20 sm:w-28 sm:h-28 lg:w-44 lg:h-44 
-                     rounded-full border-2 sm:border-3 lg:border-4 border-white 
-                     shadow-lg sm:shadow-xl lg:shadow-2xl overflow-hidden z-10"
+                     rounded-full overflow-hidden z-10"
         >
           <Image
             src={industry.roundImage}
