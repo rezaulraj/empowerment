@@ -154,7 +154,7 @@ export default function OurProcess() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {processSteps.map((step, index) => (
+          {processSteps.map((step) => (
             <motion.div
               key={step.step}
               className="relative bg-white rounded-2xl p-8 border border-gray-200 hover:border-[#E23D51] transition-all duration-300 group overflow-hidden"

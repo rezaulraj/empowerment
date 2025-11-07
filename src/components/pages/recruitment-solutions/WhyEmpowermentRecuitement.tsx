@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  FaRocket,
   FaUsers,
   FaChartLine,
   FaHandshake,
@@ -299,7 +298,7 @@ export default function WhyEmpowermentRecruitment() {
                 Ready to Empower Your Team?
               </h3>
               <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                Let's work together to build a team that drives your business
+                Lets work together to build a team that drives your business
                 forward and creates lasting success stories.
               </p>
 

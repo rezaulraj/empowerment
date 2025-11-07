@@ -2,9 +2,17 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView, useMotionValue, animate } from "framer-motion";
+export interface Industry {
+  title: string;
+  image: string;
+  roundImage: string;
+  shortDescription: string;
+  keyRoles: string[];
+  yourBenefits: string[];
+}
 
 export default function Industries() {
-  const industries = [
+  const industries: Industry[] = [
     {
       title: "Agriculture & Farming",
       image: "/industries/agriculture.avif",

@@ -15,7 +15,7 @@ import {
 import LanguageSwitcher from "../LanguageSwitcher";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { ChevronLeft } from "lucide-react";
+// import { ChevronLeft } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 const Navbar: React.FC<HTMLAttributes<HTMLElement>> = () => {
