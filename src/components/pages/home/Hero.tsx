@@ -29,7 +29,7 @@ const Hero = () => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000); // Change image every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [mounted]);
@@ -55,10 +55,8 @@ const Hero = () => {
 
   return (
     <PageTransition>
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
-        {/* CONTINUOUS BACKGROUND IMAGE FLOW - NEVER DISAPPEARS */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900 ">
         <div className="absolute inset-0 z-0">
-          {/* All images stacked with continuous opacity transitions */}
           {images.map((image, index) => (
             <motion.div
               key={image}
@@ -81,13 +79,12 @@ const Hero = () => {
                 priority={index === 0}
                 quality={90}
               />
-              {/* Gradient overlay for better text readability */}
+
               <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
             </motion.div>
           ))}
         </div>
 
-        {/* FLOATING PARTICLES FOR CONTINUOUS MOVEMENT */}
         <div className="absolute inset-0 z-5">
           {[...Array(15)].map((_, i) => (
             <motion.div
@@ -113,19 +110,16 @@ const Hero = () => {
           ))}
         </div>
 
-        {/* CONTENT */}
-        <div className="container relative z-10 px-4 mx-auto">
+        <div className="container relative z-10 px-4 mx-auto py-10">
           <div className="grid items-center grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-            {/* LEFT CONTENT - TEXT */}
             <div className="space-y-8 lg:space-y-10">
-              {/* Main Heading with Continuous Animation */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="space-y-4"
               >
-                <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white">
+                <h1 className="text-4xl lg:text-6xl xl:text-6xl font-bold leading-tight text-white">
                   <motion.span
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -144,7 +138,6 @@ const Hero = () => {
                   </motion.span>
                 </h1>
 
-                {/* Continuous Animated Line */}
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: "140px" }}
