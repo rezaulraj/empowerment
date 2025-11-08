@@ -1,51 +1,35 @@
+// variants.ts
 import { Variants } from "framer-motion";
 
-export const fadeInLeft: Variants = {
+// Fix: Use specific string literals for type property
+export const drawerVariants: Variants = {
   initial: {
-    opacity: 0,
-    x: -20,
-  },
-  animate: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-export const fadeInRight: Variants = {
-  initial: {
-    opacity: 0,
-    x: 20,
-  },
-  animate: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-export const fadeInUp: Variants = {
-  initial: {
-    y: 60,
+    y: "100%",
     opacity: 0,
   },
   animate: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.6,
-      ease: [0.6, -0.05, 0.01, 0.99],
+      type: "spring", // ✅ Use string literal, not generic string
+      stiffness: 300,
+      damping: 30,
+      mass: 1,
+      duration: 0.5,
+    },
+  },
+  exit: {
+    y: "100%",
+    opacity: 0,
+    transition: {
+      type: "tween", // ✅ Use string literal
+      ease: "easeIn",
+      duration: 0.3,
     },
   },
 };
 
-export const fadeInBottom: Variants = {
+export const fadeInUp: Variants = {
   initial: {
     opacity: 0,
     y: 20,
@@ -54,23 +38,19 @@ export const fadeInBottom: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
-      ease: [0.22, 1, 0.36, 1],
+      duration: 0.6,
+      ease: "easeOut", // ✅ Use named easing
     },
   },
 };
 
 export const organizationContainerVariants: Variants = {
-  hidden: {
-    opacity: 0,
-  },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
       staggerChildren: 0.2,
-      delayChildren: 0.8,
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      duration: 0.8,
     },
   },
 };
@@ -78,35 +58,14 @@ export const organizationContainerVariants: Variants = {
 export const organizationItemVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 30,
+    y: 20,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-export const staggerContainer: Variants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-export const fadeInItem: Variants = {
-  hidden: { y: 20, opacity: 0 },
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      duration: 0.75,
+      duration: 0.6,
+      ease: "easeOut", // ✅ Use named easing
     },
   },
 };
