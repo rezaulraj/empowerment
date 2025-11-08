@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import PageTransition from "@/components/animation/PageTransition";
 
 export default function HeroExpertise() {
@@ -11,7 +11,7 @@ export default function HeroExpertise() {
     { number: "24/7", label: "Market Support" },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -22,7 +22,7 @@ export default function HeroExpertise() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
