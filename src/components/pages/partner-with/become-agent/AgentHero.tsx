@@ -5,44 +5,14 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  FaHandshake,
-  FaRocket,
-  FaUsers,
-  FaAward,
   FaStar,
-  FaShieldAlt,
-  FaCoins,
   FaArrowRight,
   FaCrown,
   FaGem,
 } from "react-icons/fa";
 
 export default function AgentHero() {
-  const benefits = [
-    {
-      icon: FaCoins,
-      title: "Lucrative Commissions",
-      description:
-        "Competitive earning potential with unlimited growth opportunities",
-    },
-    {
-      icon: FaRocket,
-      title: "Rapid Growth",
-      description: "Access to premium resources and cutting-edge technology",
-    },
-    {
-      icon: FaShieldAlt,
-      title: "Full Support",
-      description:
-        "Comprehensive training and 24/7 backup from our expert team",
-    },
-  ];
-
-  const stats = [
-    { number: "100+", label: "Successful Partners", icon: FaUsers },
-    { number: "4.9/5", label: "Partner Satisfaction", icon: FaStar },
-    { number: "24/7", label: "Dedicated Support", icon: FaAward },
-  ];
+  
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -67,26 +37,6 @@ export default function AgentHero() {
     },
   };
 
-  const floatingCardVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-      },
-    },
-    hover: {
-      scale: 1.05,
-      y: -10,
-      transition: {
-        type: "spring",
-        stiffness: 400,
-      },
-    },
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -261,117 +211,6 @@ export default function AgentHero() {
                     </motion.div>
                   </Link>
                 </motion.div>
-              </motion.div>
-
-              {/* Stats */}
-              <motion.div
-                variants={containerVariants}
-                className="grid grid-cols-2 lg:grid-cols-4 gap-6"
-              >
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    variants={itemVariants}
-                    className="text-center group"
-                  >
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 200,
-                        delay: 1 + index * 0.1,
-                      }}
-                      className="text-2xl lg:text-3xl font-bold text-[#E23D51] mb-2 flex items-center justify-center gap-2"
-                    >
-                      <stat.icon className="text-lg opacity-80" />
-                      {stat.number}
-                    </motion.div>
-                    <div className="text-white/80 text-xs font-semibold group-hover:text-white transition-colors duration-300">
-                      {stat.label}
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
-
-            {/* Right Content - Benefits Cards */}
-            <div className="space-y-6">
-              {benefits.map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  variants={floatingCardVariants}
-                  whileHover="hover"
-                  className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 group hover:bg-white/15 transition-all duration-500 cursor-pointer relative overflow-hidden"
-                >
-                  {/* Animated Background */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-[#E23D51]/10 to-pink-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    animate={{
-                      backgroundPosition: ["0% 0%", "100% 100%"],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                    style={{
-                      backgroundSize: "200% 200%",
-                    }}
-                  />
-
-                  <div className="flex items-start gap-6 relative z-10">
-                    <motion.div
-                      className="w-20 h-20 bg-gradient-to-br from-[#E23D51] to-pink-600 rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0 shadow-2xl"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.8 }}
-                    >
-                      <benefit.icon className="text-white text-3xl" />
-                    </motion.div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#E23D51] group-hover:to-yellow-400 group-hover:bg-clip-text transition-all duration-500">
-                        {benefit.title}
-                      </h3>
-                      <p className="text-white/80 leading-relaxed text-lg">
-                        {benefit.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Shine Effect */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                </motion.div>
-              ))}
-
-              {/* Partnership Badge */}
-              <motion.div
-                variants={floatingCardVariants}
-                className="bg-gradient-to-r from-[#E23D51] to-pink-600 rounded-3xl p-6 text-center relative overflow-hidden"
-                whileHover={{ scale: 1.02 }}
-              >
-                <motion.div
-                  className="absolute inset-0 opacity-20"
-                  animate={{
-                    rotate: [0, 360],
-                  }}
-                  transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                >
-                  <div className="w-full h-full bg-gradient-conic from-transparent via-white/30 to-transparent" />
-                </motion.div>
-
-                <div className="relative z-10">
-                  <FaHandshake className="text-white text-4xl mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    Ready to Partner With Us?
-                  </h3>
-                  <p className="text-white/90 text-lg">
-                    Limited spots available for elite partners
-                  </p>
-                </div>
               </motion.div>
             </div>
           </div>

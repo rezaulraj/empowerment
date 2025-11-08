@@ -88,31 +88,79 @@ export default function OurProcess() {
 
   return (
     <section className="relative py-20 bg-white overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="grid grid-cols-10 gap-8">
-          {[...Array(50)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="flex justify-center items-center"
-              animate={{
-                scale: [1, 1.1, 1],
-                opacity: [0.3, 0.6, 0.3],
+      {/* Large Rotating Background for Entire Container - More Visible */}
+      <div className="absolute inset-0 z-0">
+        <div className="w-full h-full flex items-center justify-center">
+          <motion.div
+            className="w-[1000px] h-[1000px] opacity-10" // Increased opacity
+            animate={{ rotate: 360 }}
+            transition={{
+              duration: 30, // Faster rotation
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+            <Image
+              src="/logo/round.png"
+              alt="Background Pattern"
+              width={1000}
+              height={1000}
+              className="object-contain"
+              style={{
+                filter:
+                  "brightness(0) saturate(100%) invert(36%) sepia(47%) saturate(1352%) hue-rotate(316deg) brightness(99%) contrast(83%)",
               }}
-              transition={{
-                duration: 4 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            >
-              <Image
-                src="/logo/round.png"
-                alt="Background Pattern"
-                width={30}
-                height={30}
-              />
-            </motion.div>
-          ))}
+              priority
+            />
+          </motion.div>
         </div>
+      </div>
+
+      {/* Additional Background Elements for Better Visibility */}
+      <div className="absolute top-10 left-10 w-64 h-64 opacity-5 z-0">
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
+          <Image
+            src="/logo/round.png"
+            alt="Background Element"
+            width={256}
+            height={256}
+            className="object-contain"
+            style={{
+              filter:
+                "brightness(0) saturate(100%) invert(36%) sepia(47%) saturate(1352%) hue-rotate(316deg) brightness(99%) contrast(83%)",
+            }}
+          />
+        </motion.div>
+      </div>
+
+      <div className="absolute bottom-10 right-10 w-72 h-72 opacity-5 z-0">
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{
+            duration: 35,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
+          <Image
+            src="/logo/round.png"
+            alt="Background Element"
+            width={288}
+            height={288}
+            className="object-contain"
+            style={{
+              filter:
+                "brightness(0) saturate(100%) invert(36%) sepia(47%) saturate(1352%) hue-rotate(316deg) brightness(99%) contrast(83%)",
+            }}
+          />
+        </motion.div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -147,6 +195,7 @@ export default function OurProcess() {
             and contribute to your success.
           </p>
         </motion.div>
+
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
@@ -157,29 +206,46 @@ export default function OurProcess() {
           {processSteps.map((step) => (
             <motion.div
               key={step.step}
-              className="relative bg-white rounded-2xl p-8 border border-gray-200 hover:border-[#E23D51] transition-all duration-300 group overflow-hidden"
+              className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 hover:border-[#E23D51] transition-all duration-300 group overflow-hidden shadow-lg hover:shadow-xl"
               variants={itemVariants}
               whileHover={{ y: -5 }}
               transition={{ delay: step.delay }}
             >
+              {/* Large Rotating Background for Each Card - More Visible */}
               <motion.div
-                className="absolute inset-0 opacity-[0.03] flex items-center justify-center"
-                whileHover={{ opacity: 0.05 }}
+                className="absolute inset-0 opacity-10 flex items-center justify-center" // Increased opacity
+                whileHover={{ opacity: 0.15 }} // More visible on hover
                 transition={{ duration: 0.3 }}
               >
-                <Image
-                  src="/logo/round.png"
-                  alt="Card Background Logo"
-                  width={200}
-                  height={200}
-                  className="object-contain"
-                />
+                <motion.div
+                  className="w-80 h-80" // Larger size
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    duration: 20, // Faster rotation
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                >
+                  <Image
+                    src="/logo/round.png"
+                    alt="Card Background Logo"
+                    width={320}
+                    height={320}
+                    className="object-contain"
+                    style={{
+                      filter:
+                        "brightness(0) saturate(100%) invert(36%) sepia(47%) saturate(1352%) hue-rotate(316deg) brightness(99%) contrast(83%)",
+                    }}
+                  />
+                </motion.div>
               </motion.div>
+
+              {/* Small Floating Logos - More Visible */}
               <motion.div
-                className="absolute top-2 left-2 w-8 h-8 opacity-20"
+                className="absolute top-4 left-4 w-10 h-10 opacity-30" // Increased size and opacity
                 animate={{
-                  x: [0, 20, 0, -20, 0],
-                  y: [0, -15, 0, 15, 0],
+                  x: [0, 25, 0, -25, 0],
+                  y: [0, -20, 0, 20, 0],
                   rotate: [0, 90, 180, 270, 360],
                 }}
                 transition={{
@@ -191,16 +257,20 @@ export default function OurProcess() {
                 <Image
                   src="/logo/round.png"
                   alt="Moving Logo"
-                  width={32}
-                  height={32}
+                  width={40}
+                  height={40}
+                  style={{
+                    filter:
+                      "brightness(0) saturate(100%) invert(36%) sepia(47%) saturate(1352%) hue-rotate(316deg) brightness(99%) contrast(83%)",
+                  }}
                 />
               </motion.div>
 
               <motion.div
-                className="absolute top-2 right-2 w-6 h-6 opacity-25"
+                className="absolute top-4 right-4 w-8 h-8 opacity-35" // Increased opacity
                 animate={{
-                  x: [0, -25, 0, 25, 0],
-                  y: [0, -10, 0, 10, 0],
+                  x: [0, -30, 0, 30, 0],
+                  y: [0, -15, 0, 15, 0],
                   rotate: [0, -90, -180, -270, -360],
                 }}
                 transition={{
@@ -213,85 +283,57 @@ export default function OurProcess() {
                 <Image
                   src="/logo/round.png"
                   alt="Moving Logo"
-                  width={24}
-                  height={24}
+                  width={32}
+                  height={32}
+                  style={{
+                    filter:
+                      "brightness(0) saturate(100%) invert(36%) sepia(47%) saturate(1352%) hue-rotate(316deg) brightness(99%) contrast(83%)",
+                  }}
                 />
               </motion.div>
 
+              {/* Step Number with Rotating Logo - More Visible */}
               <motion.div
-                className="absolute bottom-2 left-2 w-7 h-7 opacity-15"
-                animate={{
-                  x: [0, 15, 0, -15, 0],
-                  y: [0, 20, 0, -20, 0],
-                  rotate: [0, 180, 360, 180, 0],
-                }}
-                transition={{
-                  duration: 9,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 2,
-                }}
-              >
-                <Image
-                  src="/logo/round.png"
-                  alt="Moving Logo"
-                  width={28}
-                  height={28}
-                />
-              </motion.div>
-
-              <motion.div
-                className="absolute bottom-2 right-2 w-5 h-5 opacity-30"
-                animate={{
-                  x: [0, -18, 0, 18, 0],
-                  y: [0, 12, 0, -12, 0],
-                  rotate: [0, -180, -360, -180, 0],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1.5,
-                }}
-              >
-                <Image
-                  src="/logo/round.png"
-                  alt="Moving Logo"
-                  width={20}
-                  height={20}
-                />
-              </motion.div>
-              <motion.div
-                className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg shadow-transparent overflow-hidden z-10"
+                className="absolute -top-6 -left-6 w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg z-10 bg-white/80 backdrop-blur-sm border border-white/50"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{
-                    duration: 15,
+                    duration: 12, // Faster rotation
                     repeat: Infinity,
                     ease: "linear",
                   }}
-                  className="w-13 h-13"
+                  className="w-16 h-16"
                 >
                   <Image
                     src="/logo/round.png"
                     alt="Step Logo"
-                    width={60}
-                    height={60}
-                    className="text-white"
+                    width={64}
+                    height={64}
+                    style={{
+                      filter:
+                        "brightness(0) saturate(100%) invert(36%) sepia(47%) saturate(1352%) hue-rotate(316deg) brightness(99%) contrast(83%)",
+                    }}
                   />
                 </motion.div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-xs font-bold text-[#E23D51]">
+                    {step.step}
+                  </span>
+                </div>
               </motion.div>
 
+              {/* Main Icon */}
               <motion.div
-                className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#E23D51] group-hover:text-white transition-all duration-300 relative z-10"
+                className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#E23D51] group-hover:text-white transition-all duration-300 relative z-10 ml-auto"
                 whileHover={{ scale: 1.1 }}
               >
                 <step.icon className="text-2xl text-[#E23D51] group-hover:text-white transition-colors duration-300" />
               </motion.div>
 
+              {/* Content */}
               <div className="mb-4 relative z-10">
                 <span className="text-sm font-semibold text-[#E23D51] uppercase tracking-wide">
                   Step {step.step}
@@ -304,6 +346,8 @@ export default function OurProcess() {
               <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 relative z-10">
                 {step.description}
               </p>
+
+              {/* Bottom Accent Bar */}
               <div className="absolute bottom-0 left-0 w-0 h-1 bg-[#E23D51] group-hover:w-full transition-all duration-500 z-10" />
             </motion.div>
           ))}

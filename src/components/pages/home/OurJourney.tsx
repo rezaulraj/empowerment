@@ -123,7 +123,7 @@ const OurJourney: React.FC = () => {
           </motion.p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
+        <div className="">
           <div className="space-y-12 sm:space-y-16 md:space-y-20">
             {timelineData.map((item, index) => {
               const isLeft = index % 2 === 0;
@@ -223,7 +223,7 @@ const OurJourney: React.FC = () => {
                       } transition-all duration-500`}
                       whileHover={{ scale: isMobile ? 1 : 1.02 }}
                     >
-                      <div className="aspect-video sm:aspect-[4/3] relative">
+                      <div className="aspect-video sm:aspect-[4/3] relative z-20">
                         <Image
                           src={item.image}
                           alt={item.title}

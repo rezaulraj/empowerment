@@ -32,7 +32,8 @@ const ServiceCard = ({
     <Card
       className="relative group overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}>
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <CardContent className="p-0 relative">
         <div className="relative h-[280px] sm:h-[320px] md:h-[360px] lg:h-[400px] w-full">
           <Image
@@ -58,11 +59,13 @@ const ServiceCard = ({
               variant="ghost"
               className={`absolute w-7 sm:w-8 md:w-10 h-7 sm:h-8 md:h-10 rounded-full bg-white group-hover:bg-black 
                 flex items-center justify-center transition-all duration-300 
-                group-hover:w-[90px] sm:group-hover:w-28 md:group-hover:w-36`}>
+                group-hover:w-[90px] sm:group-hover:w-28 md:group-hover:w-36`}
+            >
               <span
                 className={`absolute text-[10px] sm:text-sm whitespace-nowrap
                 text-black group-hover:text-white transition-all duration-300
-                ${isHovered ? "opacity-100 translate-x-0 left-3" : "opacity-0 -translate-x-4 pointer-events-none"}`}>
+                ${isHovered ? "opacity-100 translate-x-0 left-3" : "opacity-0 -translate-x-4 pointer-events-none"}`}
+              >
                 {b("btnText")}
               </span>
               <ArrowRight
@@ -115,7 +118,8 @@ const OurServices = () => {
   return (
     <section
       id="allservices"
-      className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
+      className="relative py-12 sm:py-16 md:py-20 overflow-hidden"
+    >
       {/* Split Background */}
       <div className="absolute inset-0">
         <div className="h-1/2 bg-gray-50" />
@@ -129,7 +133,8 @@ const OurServices = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold mb-4">
+            className="text-3xl md:text-4xl font-bold mb-4"
+          >
             {t("title")}
           </motion.h2>
           <motion.p
@@ -137,7 +142,8 @@ const OurServices = () => {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+            className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto"
+          >
             {t("subtitle")}
           </motion.p>
         </div>
@@ -150,12 +156,14 @@ const OurServices = () => {
               loop: true,
               startIndex: 1,
             }}
-            className="w-full max-w-[95%] sm:max-w-[90%] mx-auto">
+            className="w-full container mx-auto"
+          >
             <CarouselContent className="-ml-2 sm:-ml-4">
               {services.map((service, index) => (
                 <CarouselItem
                   key={index}
-                  className="pl-2 sm:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                  className="pl-2 sm:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
+                >
                   <ServiceCard {...service} />
                 </CarouselItem>
               ))}
