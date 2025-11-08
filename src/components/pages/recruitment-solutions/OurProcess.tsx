@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import {
   FaSearch,
@@ -64,7 +64,7 @@ export default function OurProcess() {
     },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -74,6 +74,17 @@ export default function OurProcess() {
     },
   };
 
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
 
   return (
     <section className="relative py-20 bg-white overflow-hidden">
@@ -196,7 +207,7 @@ export default function OurProcess() {
             <motion.div
               key={step.step}
               className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 hover:border-[#E23D51] transition-all duration-300 group overflow-hidden shadow-lg hover:shadow-xl"
-              // variants={itemVariants}
+              variants={itemVariants}
               whileHover={{ y: -5 }}
               transition={{ delay: step.delay }}
             >

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -103,7 +103,7 @@ export default function TalentAssessment() {
     },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -114,6 +114,38 @@ export default function TalentAssessment() {
     },
   };
 
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+    hover: {
+      scale: 1.05,
+      y: -10,
+      transition: {
+        type: "spring",
+        stiffness: 400,
+      },
+    },
+  };
 
   return (
     <PageTransition>
@@ -307,7 +339,7 @@ export default function TalentAssessment() {
               <motion.div
                 key={index}
                 className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 text-center hover:shadow-xl transition-all duration-300 group overflow-hidden"
-                // variants={itemVariants}
+                variants={itemVariants}
                 whileHover={{ y: -5 }}
               >
                 {/* Card Background Logo */}
@@ -373,7 +405,7 @@ export default function TalentAssessment() {
               <motion.div
                 key={index}
                 className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 hover:border-[#E23D51] transition-all duration-300 group overflow-hidden"
-                // variants={cardVariants}
+                variants={cardVariants}
                 whileHover="hover"
               >
                 {/* Card Background Logo */}

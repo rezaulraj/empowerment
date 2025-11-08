@@ -14,7 +14,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-// import { serviceDescriptionVariants } from "@/components/animation/contentVariants";
+import { serviceDescriptionVariants } from "@/components/animation/contentVariants";
 import { useTranslations } from "next-intl";
 
 const ServiceCard = ({
@@ -138,7 +138,7 @@ const OurServices = () => {
             {t("title")}
           </motion.h2>
           <motion.p
-            // variants={serviceDescriptionVariants}
+            variants={serviceDescriptionVariants}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}

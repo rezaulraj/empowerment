@@ -1,7 +1,8 @@
-export const headingVariants = {
-  initial: { 
-    opacity: 0, 
-    y: 20 
+import { Variants } from "framer-motion";
+export const headingVariants: Variants = {
+  initial: {
+    opacity: 0,
+    y: 20,
   },
   animate: {
     opacity: 1,
@@ -9,15 +10,15 @@ export const headingVariants = {
     transition: {
       duration: 0.8,
       delay: 0.2,
-      ease: [0.22, 1, 0.36, 1]
-    }
-  }
-}
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
 
-export const paragraphVariants = {
-  initial: { 
-    opacity: 0, 
-    y: 20 
+export const paragraphVariants: Variants = {
+  initial: {
+    opacity: 0,
+    y: 20,
   },
   animate: {
     opacity: 1,
@@ -25,30 +26,30 @@ export const paragraphVariants = {
     transition: {
       duration: 0.8,
       delay: 0.4,
-      ease: [0.22, 1, 0.36, 1]
-    }
-  }
-}
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
 
-export const containerVariants = {
-  initial: { 
-    opacity: 0, 
-    y: 20 
+export const containerVariants: Variants = {
+  initial: {
+    opacity: 0,
+    y: 20,
   },
   animate: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.8,
-      ease: [0.22, 1, 0.36, 1]
-    }
-  }
-}
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
 
-export const imageVariants = {
-  initial: { 
-    opacity: 0, 
-    scale: 0.95 
+export const imageVariants: Variants = {
+  initial: {
+    opacity: 0,
+    scale: 0.95,
   },
   animate: {
     opacity: 1,
@@ -58,54 +59,54 @@ export const imageVariants = {
       scale: {
         type: "spring",
         stiffness: 100,
-        damping: 20
-      }
-    }
+        damping: 20,
+      },
+    },
   },
   hover: {
     scale: 1.02,
     transition: {
       duration: 0.3,
-      ease: [0.22, 1, 0.36, 1]
-    }
-  }
-}
-
-export const journeyTitleVariants = {
-  hidden: { 
-    opacity: 0, 
-    y: 20 
+      ease: [0.22, 1, 0.36, 1],
+    },
   },
-  visible: { 
-    opacity: 1, 
+};
+
+export const journeyTitleVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1]
-    }
-  }
-}
-
-export const journeySubtitleVariants = {
-  hidden: { 
-    opacity: 0, 
-    y: 20 
+      ease: [0.22, 1, 0.36, 1],
+    },
   },
-  visible: { 
-    opacity: 1, 
+};
+
+export const journeySubtitleVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
       delay: 0.2,
-      ease: [0.22, 1, 0.36, 1]
-    }
-  }
-}
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
 
-export const serviceDescriptionVariants = {
-  initial: { 
-    opacity: 0, 
-    y: 20 
+export const serviceDescriptionVariants: Variants = {
+  initial: {
+    opacity: 0,
+    y: 20,
   },
   animate: {
     opacity: 1,
@@ -113,10 +114,10 @@ export const serviceDescriptionVariants = {
     transition: {
       duration: 0.6,
       delay: 0.3,
-      ease: [0.22, 1, 0.36, 1]
-    }
-  }
-}
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
 
 export const bannerVariants = {
   heading: {
@@ -126,10 +127,10 @@ export const bannerVariants = {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: [0.22, 1, 0.36, 1]
-      }
+        ease: [0.22, 1, 0.36, 1],
+      },
     },
-    viewport: { once: true }
+    viewport: { once: true },
   },
   subtitle: {
     initial: { opacity: 0, y: 20 },
@@ -139,10 +140,10 @@ export const bannerVariants = {
       transition: {
         duration: 0.8,
         delay: 0.2,
-        ease: [0.22, 1, 0.36, 1]
-      }
+        ease: [0.22, 1, 0.36, 1],
+      },
     },
-    viewport: { once: true }
+    viewport: { once: true },
   },
   line: {
     initial: { scaleX: 0 },
@@ -151,9 +152,9 @@ export const bannerVariants = {
       transition: {
         duration: 0.8,
         delay: 0.4,
-        ease: [0.22, 1, 0.36, 1]
-      }
+        ease: [0.22, 1, 0.36, 1],
+      },
     },
-    viewport: { once: true }
-  }
-}
+    viewport: { once: true },
+  },
+};

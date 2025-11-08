@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import {
   FaRocket,
@@ -76,7 +76,7 @@ export default function WhyChoseOurHrServices() {
     { number: "99%", label: "Retention Success", icon: FaCrown },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -86,7 +86,17 @@ export default function WhyChoseOurHrServices() {
     },
   };
 
-  
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
 
   return (
     <section className="relative py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 overflow-hidden">
@@ -194,7 +204,7 @@ export default function WhyChoseOurHrServices() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-            //   variants={itemVariants}
+              variants={itemVariants}
               className="group relative"
             >
               {/* Card Background */}
@@ -332,7 +342,7 @@ export default function WhyChoseOurHrServices() {
               </p>
               <Link
                 href={"/contact-us"}
-                className="px-12 py-4 rounded-full font-bold text-white text-lg shadow-lg hover:shadow-xl transition-all duration-300 group inline-flex gap-3 mx-auto"
+                className="px-12 py-4 rounded-full font-bold text-white text-lg shadow-lg hover:shadow-xl transition-all duration-300 group inline-flex items-center gap-3 mx-auto"
                 style={{
                   background: "linear-gradient(45deg, #E23D51, #ff6b7a)",
                 }}

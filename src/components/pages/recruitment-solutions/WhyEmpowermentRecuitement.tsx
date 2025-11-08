@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -69,7 +69,7 @@ export default function WhyEmpowermentRecruitment() {
     { number: "100+", label: "Partner Companies", icon: FaAward },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -79,7 +79,18 @@ export default function WhyEmpowermentRecruitment() {
     },
   };
 
- 
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <section className="relative py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       {/* Background Pattern */}
@@ -168,7 +179,7 @@ export default function WhyEmpowermentRecruitment() {
             <motion.div
               key={index}
               className="relative bg-white rounded-2xl p-8 border border-gray-200 hover:border-[#E23D51] transition-all duration-300 group hover:shadow-xl"
-              // variants={itemVariants}
+              variants={itemVariants}
               whileHover={{ y: -5 }}
             >
               {/* Moving Logo in Corner */}

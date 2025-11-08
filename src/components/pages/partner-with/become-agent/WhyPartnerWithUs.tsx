@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import {
   FaMoneyBillWave,
@@ -117,12 +117,24 @@ export default function WhyPartnerWithUs() {
     },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
       },
     },
   };
@@ -281,7 +293,7 @@ export default function WhyPartnerWithUs() {
           {partnershipBenefits.map((benefit, index) => (
             <motion.div
               key={index}
-              //   variants={itemVariants}
+              variants={itemVariants}
               className="group relative"
             >
               {/* Card Background */}
@@ -408,7 +420,7 @@ export default function WhyPartnerWithUs() {
           {values.map((value, index) => (
             <motion.div
               key={index}
-              //   variants={itemVariants}
+              variants={itemVariants}
               className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 text-center border border-gray-200 group hover:shadow-xl transition-all duration-300"
             >
               {/* Rotating Background Logo */}
