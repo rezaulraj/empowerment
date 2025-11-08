@@ -9,23 +9,21 @@ export const drawerVariants: Variants = {
     y: 0,
     opacity: 1,
     transition: {
-      type: "spring" as const, // ✅ Use 'as const' to fix the type
-      stiffness: 300,
-      damping: 30,
-      // Remove mass and duration for spring animations
+      type: "tween",
+      ease: "easeOut",
+      duration: 0.5,
     },
   },
   exit: {
     y: "100%",
     opacity: 0,
     transition: {
-      type: "tween" as const, // ✅ Use 'as const' to fix the type
+      type: "tween",
       ease: "easeIn",
       duration: 0.3,
     },
   },
 };
-
 export const fadeInLeft: Variants = {
   initial: {
     opacity: 0,
