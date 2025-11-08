@@ -129,7 +129,7 @@ const IndustrySpecialisation = () => {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        {/* Header */}
+    
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -151,7 +151,7 @@ const IndustrySpecialisation = () => {
           </motion.p>
         </div>
 
-        {/* Full Image Grid */}
+     
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4">
           {industries.map((industry, index) => (
             <motion.div
@@ -165,7 +165,7 @@ const IndustrySpecialisation = () => {
               onMouseLeave={() => setHoveredIndex(null)}
               onClick={() => setSelectedIndustry(index)}
             >
-              {/* Full Image Container */}
+              
               <div className="relative w-full h-full rounded-xl overflow-hidden">
                 <Image
                   src={industry.image}
@@ -175,7 +175,7 @@ const IndustrySpecialisation = () => {
                   sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
                 />
 
-                {/* Hover Overlay */}
+                
                 <motion.div
                   className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-500"
                   initial={false}
@@ -187,19 +187,18 @@ const IndustrySpecialisation = () => {
                   }}
                 />
 
-                {/* Icon */}
+              
                 <div className="absolute top-3 left-3 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center backdrop-blur-sm">
                   <span className="text-lg">{industry.icon}</span>
                 </div>
 
-                {/* Title - Always Visible */}
+              
                 <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
                   <h3 className="text-white font-semibold text-sm leading-tight">
                     {industry.title}
                   </h3>
                 </div>
 
-                {/* Read More Button - Appears on Hover */}
                 <motion.div
                   className="absolute inset-0 flex items-center justify-center"
                   initial={{ opacity: 0, y: 20 }}
@@ -220,7 +219,7 @@ const IndustrySpecialisation = () => {
                 </motion.div>
               </div>
 
-              {/* Hover Scale Effect */}
+           
               <motion.div
                 className="absolute inset-0 rounded-xl border-2 border-[#EF3D54] opacity-0 pointer-events-none"
                 animate={{
@@ -233,7 +232,7 @@ const IndustrySpecialisation = () => {
           ))}
         </div>
 
-        {/* Popup Modal */}
+     
         <AnimatePresence>
           {selectedIndustry !== null && (
             <motion.div
@@ -244,7 +243,7 @@ const IndustrySpecialisation = () => {
               onClick={() => setSelectedIndustry(null)}
             >
               <motion.div
-                key={selectedIndustry} // This ensures re-animation when industry changes
+                key={selectedIndustry}
                 initial={{ scale: 0.5, opacity: 0, y: 100 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.5, opacity: 0, y: 100 }}
@@ -256,7 +255,7 @@ const IndustrySpecialisation = () => {
                 className="relative bg-white rounded-2xl overflow-hidden max-w-4xl w-full max-h-[90vh]"
                 onClick={(e) => e.stopPropagation()}
               >
-                {/* Close Button */}
+                
                 <button
                   onClick={() => setSelectedIndustry(null)}
                   className="absolute top-4 right-4 z-10 w-8 h-8 bg-black/20 rounded-full flex items-center justify-center backdrop-blur-sm hover:bg-black/30 transition-colors"
@@ -264,7 +263,7 @@ const IndustrySpecialisation = () => {
                   <X className="w-4 h-4 text-white" />
                 </button>
 
-                {/* Navigation Buttons */}
+                
                 <button
                   onClick={handlePrevious}
                   className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 bg-black/20 rounded-full flex items-center justify-center backdrop-blur-sm hover:bg-black/30 transition-colors"
@@ -279,9 +278,9 @@ const IndustrySpecialisation = () => {
                   <ChevronRight className="w-5 h-5 text-white" />
                 </button>
 
-                {/* Popup Content */}
+                
                 <div className="grid md:grid-cols-2 h-full">
-                  {/* Image Section */}
+                  
                   <div className="relative h-64 md:h-full">
                     <Image
                       src={industries[selectedIndustry].image}
@@ -296,13 +295,12 @@ const IndustrySpecialisation = () => {
                       </span>
                     </div>
 
-                    {/* Industry Counter */}
+                 
                     <div className="absolute bottom-4 left-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
                       {selectedIndustry + 1} / {industries.length}
                     </div>
                   </div>
 
-                  {/* Content Section */}
                   <div className="p-6 md:p-8 flex flex-col justify-center">
                     <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                       {industries[selectedIndustry].title}
@@ -335,7 +333,6 @@ const IndustrySpecialisation = () => {
           )}
         </AnimatePresence>
 
-        {/* Load More Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

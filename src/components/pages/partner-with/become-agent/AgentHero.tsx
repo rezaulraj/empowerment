@@ -8,7 +8,7 @@ import { FaStar, FaArrowRight, FaCrown, FaGem } from "react-icons/fa";
 import PageTransition from "@/components/animation/PageTransition";
 
 export default function AgentHero() {
-  const containerVariants: Variants= {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -34,7 +34,7 @@ export default function AgentHero() {
   return (
     <PageTransition>
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Gradient Overlay */}
+
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/partner.avif"
@@ -48,9 +48,8 @@ export default function AgentHero() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/80" />
         </div>
 
-        {/* Animated Floating Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Floating Icons */}
+    
           {[...Array(12)].map((_, i) => (
             <motion.div
               key={i}
@@ -80,7 +79,6 @@ export default function AgentHero() {
             </motion.div>
           ))}
 
-          {/* Floating Particles */}
           {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
@@ -102,7 +100,6 @@ export default function AgentHero() {
           ))}
         </div>
 
-        {/* Main Content */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
           <motion.div
             className="max-w-7xl mx-auto"
@@ -111,9 +108,9 @@ export default function AgentHero() {
             animate="visible"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Left Content */}
+        
               <div className="text-white">
-                {/* Premium Badge */}
+             
                 <motion.div
                   variants={itemVariants}
                   className="inline-flex items-center gap-3 bg-gradient-to-r from-[#E23D51] to-pink-600 rounded-full px-6 py-3 mb-8 shadow-2xl"
@@ -129,11 +126,11 @@ export default function AgentHero() {
                     <FaCrown className="text-white text-lg" />
                   </motion.div>
                   <span className="text-white font-bold text-lg">
-                    Elite Partnership Program
+                    Partnering With Us To Grow Together
                   </span>
                 </motion.div>
 
-                {/* Main Heading */}
+      
                 <motion.h1
                   variants={itemVariants}
                   className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
@@ -157,7 +154,7 @@ export default function AgentHero() {
                   </motion.span>
                 </motion.h1>
 
-                {/* Subheading */}
+
                 <motion.p
                   variants={itemVariants}
                   className="text-2xl sm:text-3xl text-white/90 mb-8 leading-relaxed font-light"
@@ -169,8 +166,6 @@ export default function AgentHero() {
                   </span>
                   Recruitment Partnership Program
                 </motion.p>
-
-                {/* Description */}
                 <motion.p
                   variants={itemVariants}
                   className="text-xl text-white/80 mb-12 leading-relaxed font-normal"
@@ -181,7 +176,6 @@ export default function AgentHero() {
                   India.
                 </motion.p>
 
-                {/* CTA Buttons */}
                 <motion.div
                   variants={itemVariants}
                   className="flex flex-col sm:flex-row gap-6 mb-12"
@@ -194,7 +188,7 @@ export default function AgentHero() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Link
-                      href="/become-agent"
+                      href="/contact-us"
                       className="bg-gradient-to-r from-[#E23D51] to-pink-600 text-white px-12 py-5 rounded-full font-bold text-xl flex items-center gap-4 group transition-all duration-300"
                     >
                       Start Your Journey

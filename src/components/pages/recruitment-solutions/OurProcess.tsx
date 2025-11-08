@@ -88,14 +88,14 @@ export default function OurProcess() {
 
   return (
     <section className="relative py-20 bg-white overflow-hidden">
-      {/* Large Rotating Background for Entire Container - More Visible */}
+
       <div className="absolute inset-0 z-0">
         <div className="w-full h-full flex items-center justify-center">
           <motion.div
-            className="w-[1000px] h-[1000px] opacity-10" // Increased opacity
+            className="w-[1000px] h-[1000px] opacity-10" 
             animate={{ rotate: 360 }}
             transition={{
-              duration: 30, // Faster rotation
+              duration: 30, 
               repeat: Infinity,
               ease: "linear",
             }}
@@ -116,7 +116,6 @@ export default function OurProcess() {
         </div>
       </div>
 
-      {/* Additional Background Elements for Better Visibility */}
       <div className="absolute top-10 left-10 w-64 h-64 opacity-5 z-0">
         <motion.div
           animate={{ rotate: -360 }}
@@ -211,17 +210,17 @@ export default function OurProcess() {
               whileHover={{ y: -5 }}
               transition={{ delay: step.delay }}
             >
-              {/* Large Rotating Background for Each Card - More Visible */}
+             
               <motion.div
-                className="absolute inset-0 opacity-10 flex items-center justify-center" // Increased opacity
-                whileHover={{ opacity: 0.15 }} // More visible on hover
+                className="absolute inset-0 opacity-10 flex items-center justify-center"
+                whileHover={{ opacity: 0.15 }}
                 transition={{ duration: 0.3 }}
               >
                 <motion.div
-                  className="w-80 h-80" // Larger size
+                  className="w-80 h-80"
                   animate={{ rotate: 360 }}
                   transition={{
-                    duration: 20, // Faster rotation
+                    duration: 20,
                     repeat: Infinity,
                     ease: "linear",
                   }}
@@ -240,9 +239,8 @@ export default function OurProcess() {
                 </motion.div>
               </motion.div>
 
-              {/* Small Floating Logos - More Visible */}
               <motion.div
-                className="absolute top-4 left-4 w-10 h-10 opacity-30" // Increased size and opacity
+                className="absolute top-4 left-4 w-10 h-10 opacity-30" 
                 animate={{
                   x: [0, 25, 0, -25, 0],
                   y: [0, -20, 0, 20, 0],
@@ -267,7 +265,7 @@ export default function OurProcess() {
               </motion.div>
 
               <motion.div
-                className="absolute top-4 right-4 w-8 h-8 opacity-35" // Increased opacity
+                className="absolute top-4 right-4 w-8 h-8 opacity-35"
                 animate={{
                   x: [0, -30, 0, 30, 0],
                   y: [0, -15, 0, 15, 0],
@@ -292,7 +290,6 @@ export default function OurProcess() {
                 />
               </motion.div>
 
-              {/* Step Number with Rotating Logo - More Visible */}
               <motion.div
                 className="absolute -top-6 -left-6 w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg z-10 bg-white/80 backdrop-blur-sm border border-white/50"
                 whileHover={{ scale: 1.1, rotate: 5 }}
@@ -301,7 +298,7 @@ export default function OurProcess() {
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{
-                    duration: 12, // Faster rotation
+                    duration: 12,
                     repeat: Infinity,
                     ease: "linear",
                   }}
@@ -325,7 +322,6 @@ export default function OurProcess() {
                 </div>
               </motion.div>
 
-              {/* Main Icon */}
               <motion.div
                 className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#E23D51] group-hover:text-white transition-all duration-300 relative z-10 ml-auto"
                 whileHover={{ scale: 1.1 }}
@@ -333,7 +329,6 @@ export default function OurProcess() {
                 <step.icon className="text-2xl text-[#E23D51] group-hover:text-white transition-colors duration-300" />
               </motion.div>
 
-              {/* Content */}
               <div className="mb-4 relative z-10">
                 <span className="text-sm font-semibold text-[#E23D51] uppercase tracking-wide">
                   Step {step.step}
@@ -347,7 +342,6 @@ export default function OurProcess() {
                 {step.description}
               </p>
 
-              {/* Bottom Accent Bar */}
               <div className="absolute bottom-0 left-0 w-0 h-1 bg-[#E23D51] group-hover:w-full transition-all duration-500 z-10" />
             </motion.div>
           ))}

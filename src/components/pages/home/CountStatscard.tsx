@@ -17,7 +17,7 @@ const CountStatscard = () => {
     // 👇 Set your starting year here
     const startYear = 2010;
     const currentYear = new Date().getFullYear();
-    const years = currentYear - startYear; // Auto calculate years (e.g., 15)
+    const years = currentYear - startYear; 
 
     animate(0, years, {
       duration: 2,

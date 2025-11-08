@@ -141,7 +141,7 @@ export default function WhyPartnerWithUs() {
 
   return (
     <section className="relative py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 overflow-hidden">
-      {/* Large Rotating Background */}
+ 
       <div className="absolute inset-0 opacity-5 z-0">
         <div className="w-full h-full flex items-center justify-center">
           <motion.div
@@ -169,7 +169,7 @@ export default function WhyPartnerWithUs() {
         </div>
       </div>
 
-      {/* Additional Background Elements */}
+
       <div className="absolute top-10 left-10 w-72 h-72 opacity-3 z-0">
         <motion.div
           animate={{ rotate: -360 }}
@@ -217,7 +217,7 @@ export default function WhyPartnerWithUs() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header Section */}
+
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
@@ -282,7 +282,6 @@ export default function WhyPartnerWithUs() {
           </motion.p>
         </motion.div>
 
-        {/* Benefits Grid */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
           variants={containerVariants}
@@ -296,10 +295,9 @@ export default function WhyPartnerWithUs() {
               variants={itemVariants}
               className="group relative"
             >
-              {/* Card Background */}
+
               <div className="absolute inset-0 bg-white rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500 border border-gray-100 group-hover:border-[#E23D51]/20" />
 
-              {/* Rotating Background Logo */}
               <div className="absolute inset-0 opacity-5 rounded-3xl overflow-hidden">
                 <motion.div
                   className="w-full h-full flex items-center justify-center"
@@ -325,9 +323,8 @@ export default function WhyPartnerWithUs() {
                 </motion.div>
               </div>
 
-              {/* Card Content */}
               <div className="relative z-10 p-8 h-full flex flex-col">
-                {/* Icon Container */}
+
                 <motion.div
                   className={`mb-6 p-4 rounded-2xl bg-gradient-to-r ${benefit.color} text-white shadow-lg group-hover:shadow-xl w-16 h-16 flex items-center justify-center mx-auto`}
                   whileHover={{
@@ -343,7 +340,6 @@ export default function WhyPartnerWithUs() {
                   <benefit.icon className="text-2xl" />
                 </motion.div>
 
-                {/* Content */}
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center group-hover:text-[#E23D51] transition-colors duration-300">
                   {benefit.title}
                 </h3>
@@ -351,14 +347,12 @@ export default function WhyPartnerWithUs() {
                   {benefit.description}
                 </p>
 
-                {/* Hover Effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#E23D51] to-purple-600 opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-300" />
               </div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Success Metrics */}
         <motion.div
           className="bg-white/80 relative z-20 backdrop-blur-sm rounded-3xl shadow-2xl p-12 border border-white/50 mb-16"
           initial={{ opacity: 0, y: 40 }}
@@ -409,7 +403,6 @@ export default function WhyPartnerWithUs() {
           </div>
         </motion.div>
 
-        {/* Values Section */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
           variants={containerVariants}
@@ -423,7 +416,6 @@ export default function WhyPartnerWithUs() {
               variants={itemVariants}
               className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 text-center border border-gray-200 group hover:shadow-xl transition-all duration-300"
             >
-              {/* Rotating Background Logo */}
               <div className="absolute inset-0 opacity-3 rounded-2xl overflow-hidden">
                 <motion.div
                   className="w-full h-full flex items-center justify-center"
@@ -468,7 +460,6 @@ export default function WhyPartnerWithUs() {
           ))}
         </motion.div>
 
-        {/* CTA Section */}
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -477,7 +468,6 @@ export default function WhyPartnerWithUs() {
           viewport={{ once: true }}
         >
           <div className="bg-gradient-to-r from-[#E23D51] to-purple-600 rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden">
-            {/* Background Logos */}
             <div className="absolute inset-0 opacity-10">
               <div className="grid grid-cols-3 gap-20">
                 {[...Array(6)].map((_, i) => (

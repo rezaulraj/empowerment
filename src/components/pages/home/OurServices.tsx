@@ -120,7 +120,6 @@ const OurServices = () => {
       id="allservices"
       className="relative py-12 sm:py-16 md:py-20 overflow-hidden"
     >
-      {/* Single Large Rotating Background */}
       <div className="absolute inset-0 opacity-1 z-0">
         <div className="w-full h-full flex items-center justify-center">
           <motion.div
@@ -148,7 +147,6 @@ const OurServices = () => {
         </div>
       </div>
 
-      {/* Split Background */}
       <div className="absolute inset-0 z-0">
         <div className="h-1/2 bg-gray-50/80" />
         <div className="h-1/2 bg-primary/100" />
@@ -197,7 +195,6 @@ const OurServices = () => {
               ))}
             </CarouselContent>
 
-            {/* Navigation and Timeline  */}
             <div className="absolute -bottom-12 sm:-bottom-20 md:-bottom-32 left-1/2 -translate-x-1/2 w-full max-w-[200px] xs:max-w-[280px] sm:max-w-md mt-6 sm:mt-8 md:mt-10">
               <div className="relative flex items-center justify-between py-2 sm:py-8 md:py-12">
                 <CarouselPrevious className="relative z-10 bg-white hover:bg-white/90 w-6 h-6 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border-2 border-primary/20" />

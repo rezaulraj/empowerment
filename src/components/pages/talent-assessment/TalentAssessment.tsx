@@ -150,7 +150,6 @@ export default function TalentAssessment() {
   return (
     <PageTransition>
       <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 overflow-hidden">
-        {/* Large Rotating Background for Entire Container */}
         <div className="absolute inset-0 opacity-5 z-0">
           <div className="w-full h-full flex items-center justify-center">
             <motion.div
@@ -178,7 +177,6 @@ export default function TalentAssessment() {
           </div>
         </div>
 
-        {/* Additional Background Elements */}
         <div className="absolute top-20 left-20 w-64 h-64 opacity-3 z-0">
           <motion.div
             animate={{ rotate: -360 }}
@@ -225,7 +223,6 @@ export default function TalentAssessment() {
           </motion.div>
         </div>
 
-        {/* Small Pattern Background */}
         <div className="absolute inset-0 opacity-[0.02] z-0">
           <div className="grid grid-cols-8 gap-16">
             {[...Array(32)].map((_, i) => (
@@ -259,7 +256,6 @@ export default function TalentAssessment() {
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Header Section */}
           <motion.div
             className="text-center mb-20"
             initial={{ opacity: 0, y: 30 }}
@@ -327,7 +323,6 @@ export default function TalentAssessment() {
             </motion.p>
           </motion.div>
 
-          {/* Benefits Stats */}
           <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
             variants={containerVariants}
@@ -342,7 +337,6 @@ export default function TalentAssessment() {
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
               >
-                {/* Card Background Logo */}
                 <div className="absolute inset-0 opacity-5 rounded-2xl overflow-hidden">
                   <motion.div
                     className="w-full h-full flex items-center justify-center"
@@ -393,7 +387,6 @@ export default function TalentAssessment() {
             ))}
           </motion.div>
 
-          {/* Assessment Features Grid */}
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
             variants={containerVariants}
@@ -408,7 +401,6 @@ export default function TalentAssessment() {
                 variants={cardVariants}
                 whileHover="hover"
               >
-                {/* Card Background Logo */}
                 <div className="absolute inset-0 opacity-5 rounded-2xl overflow-hidden">
                   <motion.div
                     className="w-full h-full flex items-center justify-center"
@@ -434,7 +426,6 @@ export default function TalentAssessment() {
                   </motion.div>
                 </div>
 
-                {/* Moving Logo */}
                 <motion.div
                   className="absolute top-4 right-4 w-8 h-8 opacity-20 z-10"
                   animate={{
@@ -459,7 +450,6 @@ export default function TalentAssessment() {
                   />
                 </motion.div>
 
-                {/* Feature Icon */}
                 <motion.div
                   className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10`}
                   whileHover={{ rotate: 360 }}
@@ -468,7 +458,6 @@ export default function TalentAssessment() {
                   <feature.icon className="text-white text-2xl" />
                 </motion.div>
 
-                {/* Content */}
                 <div className="relative z-10">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[#E23D51] transition-colors duration-300">
                     {feature.title}
@@ -478,13 +467,11 @@ export default function TalentAssessment() {
                   </p>
                 </div>
 
-                {/* Hover Effect */}
                 <div className="absolute bottom-0 left-0 w-0 h-1 bg-[#E23D51] group-hover:w-full transition-all duration-500 z-10" />
               </motion.div>
             ))}
           </motion.div>
 
-          {/* Process Flow */}
           <motion.div
             className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-12 border border-gray-200 mb-16 relative overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
@@ -492,7 +479,6 @@ export default function TalentAssessment() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            {/* Process Background Logo */}
             <div className="absolute inset-0 opacity-30 rounded-3xl overflow-hidden">
               <motion.div
                 className="w-full h-full flex items-center justify-center"
@@ -538,7 +524,6 @@ export default function TalentAssessment() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    {/* Step Background Logo */}
                     <div className="absolute inset-0 opacity-70 rounded-2xl">
                       <motion.div
                         animate={{ rotate: 360 }}
@@ -583,7 +568,6 @@ export default function TalentAssessment() {
             </div>
           </motion.div>
 
-          {/* CTA Section */}
           <motion.div
             className="text-center"
             initial={{ opacity: 0, y: 30 }}
@@ -592,7 +576,6 @@ export default function TalentAssessment() {
             viewport={{ once: true }}
           >
             <div className="bg-gradient-to-r from-[#E23D51] to-pink-500 rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden">
-              {/* Background Logos */}
               <div className="absolute inset-0 opacity-10">
                 <div className="grid grid-cols-3 gap-20">
                   {[...Array(6)].map((_, i) => (

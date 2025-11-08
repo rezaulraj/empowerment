@@ -146,7 +146,6 @@ const Hero = () => {
                 />
               </motion.div>
 
-              {/* Description with Continuous Presence */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -156,7 +155,6 @@ const Hero = () => {
                 <p className="text-lg lg:text-xl leading-relaxed text-white/90 max-w-2xl backdrop-blur-sm bg-white/10 rounded-2xl p-6 border border-white/20">
                   {t("description")}
                 </p>
-                {/* Continuous Glow Effect */}
                 <motion.div
                   animate={{
                     opacity: [0.3, 0.6, 0.3],
@@ -170,7 +168,6 @@ const Hero = () => {
                 />
               </motion.div>
 
-              {/* CTA & Social - Always Visible */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -195,7 +192,6 @@ const Hero = () => {
                   </Button>
                 </motion.div>
 
-                {/* Social Media Icons with Continuous Hover */}
                 <div className="flex gap-3">
                   {[
                     {
@@ -253,14 +249,14 @@ const Hero = () => {
               </motion.div>
             </div>
 
-            {/* RIGHT SIDE - CONTINUOUS IMAGE FLOW VISUALIZATION */}
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               className="relative"
             >
-              {/* Main Image Display with Continuous Scale */}
+
               <motion.div
                 animate={{
                   scale: [1, 1.02, 1],
@@ -297,7 +293,6 @@ const Hero = () => {
                   ))}
                 </div>
 
-                {/* Continuous Progress Bar */}
                 <motion.div
                   key={currentImageIndex}
                   initial={{ width: "0%" }}
@@ -307,7 +302,6 @@ const Hero = () => {
                 />
               </motion.div>
 
-              {/* Continuous Image Indicators */}
               <div className="flex justify-center gap-3 mt-6">
                 {images.map((_, index) => (
                   <motion.button

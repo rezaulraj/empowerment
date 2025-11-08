@@ -549,7 +549,7 @@ function ResponsiveIndustryCard({
 
   return (
     <div className="relative">
-      {/* Large Rotating Background Before Each Industry Section */}
+     
       <div className="absolute -top-20 -left-20 w-96 h-96 opacity-5 z-0">
         <motion.div
           animate={{ rotate: 360 }}
@@ -574,7 +574,7 @@ function ResponsiveIndustryCard({
         </motion.div>
       </div>
 
-      {/* Additional Background Elements */}
+
       <div className="absolute -bottom-20 -right-20 w-80 h-80 opacity-5 z-0">
         <motion.div
           animate={{ rotate: -360 }}
@@ -608,7 +608,7 @@ function ResponsiveIndustryCard({
           isEven ? "lg:flex-row" : "lg:flex-row-reverse"
         } items-center gap-8 md:gap-12 lg:gap-20 min-h-[300px] md:min-h-[400px] lg:min-h-[500px] z-10`}
       >
-        {/* Content Section */}
+
         <motion.div
           initial={{ opacity: 0, x: isEven ? -30 : 30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -665,14 +665,14 @@ function ResponsiveIndustryCard({
           </div>
         </motion.div>
 
-        {/* Image Section with Rotating Logos */}
+
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.1 }}
           className="flex-1 relative w-full max-w-2xl mx-auto lg:mx-0"
         >
-          {/* Large Background Behind Image */}
+ 
           <div className="absolute -inset-10 opacity-5 z-0">
             <motion.div
               animate={{ rotate: 360 }}
@@ -709,7 +709,6 @@ function ResponsiveIndustryCard({
             <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
           </div>
 
-          {/* Small Rotating Logos Around Image */}
           <motion.div
             style={{ rotate: rotate1 }}
             className="absolute -top-6 -left-4 sm:-top-8 sm:-left-6 lg:-top-14 lg:-left-8 
@@ -774,7 +773,6 @@ function ResponsiveIndustryCard({
             />
           </motion.div>
 
-          {/* Floating Border Elements */}
           <motion.div
             animate={{
               y: [0, -10, 0],

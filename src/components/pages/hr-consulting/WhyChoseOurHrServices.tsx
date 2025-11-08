@@ -100,7 +100,6 @@ export default function WhyChoseOurHrServices() {
 
   return (
     <section className="relative py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 overflow-hidden">
-      {/* Large Rotating Background */}
       <div className="absolute inset-0 opacity-5 z-0">
         <div className="w-full h-full flex items-center justify-center">
           <motion.div
@@ -128,7 +127,6 @@ export default function WhyChoseOurHrServices() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header Section */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -193,7 +191,6 @@ export default function WhyChoseOurHrServices() {
           </motion.p>
         </motion.div>
 
-        {/* Features Grid */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
           variants={containerVariants}
@@ -207,10 +204,8 @@ export default function WhyChoseOurHrServices() {
               variants={itemVariants}
               className="group relative"
             >
-              {/* Card Background */}
               <div className="absolute inset-0 bg-white rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500 border border-gray-100 group-hover:border-[#E23D51]/20" />
 
-              {/* Rotating Background Logo */}
               <div className="absolute inset-0 opacity-5 rounded-3xl overflow-hidden">
                 <motion.div
                   className="w-full h-full flex items-center justify-center"
@@ -236,9 +231,8 @@ export default function WhyChoseOurHrServices() {
                 </motion.div>
               </div>
 
-              {/* Card Content */}
               <div className="relative z-10 p-8 h-full flex flex-col">
-                {/* Icon Container */}
+
                 <motion.div
                   className={`mb-6 p-4 rounded-2xl bg-gradient-to-r ${feature.color} text-white shadow-lg group-hover:shadow-xl w-16 h-16 flex items-center justify-center mx-auto`}
                   whileHover={{
@@ -254,7 +248,6 @@ export default function WhyChoseOurHrServices() {
                   <feature.icon className="text-2xl" />
                 </motion.div>
 
-                {/* Content */}
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center group-hover:text-[#E23D51] transition-colors duration-300">
                   {feature.title}
                 </h3>
@@ -262,14 +255,12 @@ export default function WhyChoseOurHrServices() {
                   {feature.description}
                 </p>
 
-                {/* Hover Effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#E23D51] to-purple-600 opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-300" />
               </div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Stats Section */}
         <motion.div
           className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-12 border border-white/50"
           initial={{ opacity: 0, y: 40 }}
@@ -319,7 +310,6 @@ export default function WhyChoseOurHrServices() {
           </div>
         </motion.div>
 
-        {/* Bottom CTA */}
         <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}

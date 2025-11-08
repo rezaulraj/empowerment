@@ -48,7 +48,6 @@ export default function HeroHrConsulting() {
   return (
     <PageTransition>
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/hr consultance.jpg"
@@ -62,7 +61,6 @@ export default function HeroHrConsulting() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/60" />
         </div>
 
-        {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           {[...Array(15)].map((_, i) => (
             <motion.div
@@ -85,7 +83,6 @@ export default function HeroHrConsulting() {
           ))}
         </div>
 
-        {/* Floating Logo Elements */}
         <motion.div
           className="absolute top-20 left-10 opacity-10"
           animate={{
@@ -120,7 +117,6 @@ export default function HeroHrConsulting() {
           </div>
         </motion.div>
 
-        {/* Main Content */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
           <motion.div
             className="max-w-6xl mx-auto"
@@ -129,9 +125,7 @@ export default function HeroHrConsulting() {
             animate="visible"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Content */}
               <div className="text-white">
-                {/* Trust Badge */}
                 <motion.div
                   variants={itemVariants}
                   className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-8"
@@ -151,7 +145,6 @@ export default function HeroHrConsulting() {
                   </span>
                 </motion.div>
 
-                {/* Main Heading */}
                 <motion.h1
                   variants={itemVariants}
                   className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
@@ -176,7 +169,6 @@ export default function HeroHrConsulting() {
                   </motion.span>
                 </motion.h1>
 
-                {/* Subheading */}
                 <motion.p
                   variants={itemVariants}
                   className="text-2xl sm:text-3xl text-white/90 mb-8 leading-relaxed font-light"
@@ -193,7 +185,6 @@ export default function HeroHrConsulting() {
                   </span>
                 </motion.p>
 
-                {/* Description */}
                 <motion.p
                   variants={itemVariants}
                   className="text-xl text-white/80 mb-12 leading-relaxed font-normal"
@@ -203,7 +194,6 @@ export default function HeroHrConsulting() {
                   flourishes, and business objectives are consistently exceeded.
                 </motion.p>
 
-                {/* CTA Buttons */}
                 <motion.div
                   variants={itemVariants}
                   className="flex flex-col sm:flex-row gap-6 mb-12"
@@ -230,7 +220,6 @@ export default function HeroHrConsulting() {
                   </motion.div>
                 </motion.div>
 
-                {/* Stats */}
                 <motion.div
                   variants={containerVariants}
                   className="grid grid-cols-2 lg:grid-cols-4 gap-6"

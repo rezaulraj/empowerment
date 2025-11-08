@@ -93,7 +93,7 @@ export default function WhyEmpowermentRecruitment() {
 
   return (
     <section className="relative py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
-      {/* Background Pattern */}
+
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="grid grid-cols-8 gap-12">
           {[...Array(32)].map((_, i) => (
@@ -123,7 +123,6 @@ export default function WhyEmpowermentRecruitment() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header Section */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -167,7 +166,6 @@ export default function WhyEmpowermentRecruitment() {
           </motion.p>
         </motion.div>
 
-        {/* Features Grid */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
           variants={containerVariants}
@@ -182,7 +180,6 @@ export default function WhyEmpowermentRecruitment() {
               variants={itemVariants}
               whileHover={{ y: -5 }}
             >
-              {/* Moving Logo in Corner */}
               <motion.div
                 className="absolute top-4 right-4 w-8 h-8 opacity-20"
                 animate={{
@@ -203,7 +200,6 @@ export default function WhyEmpowermentRecruitment() {
                 />
               </motion.div>
 
-              {/* Feature Icon */}
               <motion.div
                 className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
                 whileHover={{ rotate: 360 }}
@@ -212,7 +208,6 @@ export default function WhyEmpowermentRecruitment() {
                 <feature.icon className="text-white text-2xl" />
               </motion.div>
 
-              {/* Content */}
               <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[#E23D51] transition-colors duration-300">
                 {feature.title}
               </h3>
@@ -220,13 +215,11 @@ export default function WhyEmpowermentRecruitment() {
                 {feature.description}
               </p>
 
-              {/* Hover Effect */}
               <div className="absolute bottom-0 left-0 w-0 h-1 bg-[#E23D51] group-hover:w-full transition-all duration-500" />
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Stats Section */}
         <motion.div
           className="bg-white rounded-3xl p-8 lg:p-12 border border-gray-200 mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -256,7 +249,6 @@ export default function WhyEmpowermentRecruitment() {
           </div>
         </motion.div>
 
-        {/* CTA Section */}
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -265,7 +257,7 @@ export default function WhyEmpowermentRecruitment() {
           viewport={{ once: true }}
         >
           <div className="bg-gradient-to-r from-[#E23D51] to-pink-500 rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden">
-            {/* Background Logos */}
+
             <div className="absolute inset-0 opacity-10">
               <div className="grid grid-cols-3 gap-16">
                 {[...Array(6)].map((_, i) => (
