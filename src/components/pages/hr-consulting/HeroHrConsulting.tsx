@@ -33,18 +33,6 @@ export default function HeroHrConsulting() {
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <PageTransition>
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -133,7 +121,7 @@ export default function HeroHrConsulting() {
               <div className="text-white">
                 {/* Trust Badge */}
                 <motion.div
-                  variants={itemVariants}
+                  // variants={itemVariants}
                   className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-8"
                 >
                   <motion.div
@@ -153,7 +141,7 @@ export default function HeroHrConsulting() {
 
                 {/* Main Heading */}
                 <motion.h1
-                  variants={itemVariants}
+                  // variants={itemVariants}
                   className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
                 >
                   Transform Your
@@ -178,7 +166,7 @@ export default function HeroHrConsulting() {
 
                 {/* Subheading */}
                 <motion.p
-                  variants={itemVariants}
+                  // variants={itemVariants}
                   className="text-2xl sm:text-3xl text-white/90 mb-8 leading-relaxed font-light"
                 >
                   Empowering businesses with strategic HR solutions that drive
@@ -195,7 +183,7 @@ export default function HeroHrConsulting() {
 
                 {/* Description */}
                 <motion.p
-                  variants={itemVariants}
+                  // variants={itemVariants}
                   className="text-xl text-white/80 mb-12 leading-relaxed font-normal"
                 >
                   We partner with forward-thinking organizations to create
@@ -205,7 +193,7 @@ export default function HeroHrConsulting() {
 
                 {/* CTA Buttons */}
                 <motion.div
-                  variants={itemVariants}
+                  // variants={itemVariants}
                   className="flex flex-col sm:flex-row gap-6 mb-12"
                 >
                   <motion.div
@@ -238,7 +226,7 @@ export default function HeroHrConsulting() {
                   {stats.map((stat, index) => (
                     <motion.div
                       key={index}
-                      variants={itemVariants}
+                      // variants={itemVariants}
                       className="text-center group"
                     >
                       <motion.div

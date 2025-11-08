@@ -127,18 +127,6 @@ export default function WhyPartnerWithUs() {
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <section className="relative py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 overflow-hidden">
       {/* Large Rotating Background */}
@@ -293,7 +281,7 @@ export default function WhyPartnerWithUs() {
           {partnershipBenefits.map((benefit, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
+              //   variants={itemVariants}
               className="group relative"
             >
               {/* Card Background */}
@@ -420,7 +408,7 @@ export default function WhyPartnerWithUs() {
           {values.map((value, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
+              //   variants={itemVariants}
               className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 text-center border border-gray-200 group hover:shadow-xl transition-all duration-300"
             >
               {/* Rotating Background Logo */}

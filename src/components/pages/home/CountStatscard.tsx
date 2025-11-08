@@ -1,10 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { motion, useInView, animate } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import {
-  headingVariants,
-  paragraphVariants,
-} from "@/components/animation/contentVariants";
+
 import { useTranslations } from "next-intl";
 
 const CountStatscard = () => {
@@ -72,13 +69,13 @@ const CountStatscard = () => {
         >
           <motion.h2
             className="mb-4 text-3xl font-bold sm:text-2xl md:text-4xl"
-            variants={headingVariants}
+            // variants={headingVariants}
           >
             {t("title")}
           </motion.h2>
           <motion.p
             className="text-base text-gray-600 sm:text-lg"
-            variants={paragraphVariants}
+            // variants={paragraphVariants}
           >
             {t("subtitle")}
           </motion.p>

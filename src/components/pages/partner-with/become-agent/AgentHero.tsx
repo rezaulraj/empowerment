@@ -25,17 +25,6 @@ export default function AgentHero() {
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
 
 
   return (
@@ -103,6 +92,7 @@ export default function AgentHero() {
               duration: 4 + Math.random() * 2,
               repeat: Infinity,
               delay: Math.random() * 2,
+              
             }}
           />
         ))}
@@ -121,7 +111,7 @@ export default function AgentHero() {
             <div className="text-white">
               {/* Premium Badge */}
               <motion.div
-                variants={itemVariants}
+                // variants={itemVariants}
                 className="inline-flex items-center gap-3 bg-gradient-to-r from-[#E23D51] to-pink-600 rounded-full px-6 py-3 mb-8 shadow-2xl"
               >
                 <motion.div
@@ -141,7 +131,7 @@ export default function AgentHero() {
 
               {/* Main Heading */}
               <motion.h1
-                variants={itemVariants}
+                // variants={itemVariants}
                 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
               >
                 Join Our
@@ -165,7 +155,7 @@ export default function AgentHero() {
 
               {/* Subheading */}
               <motion.p
-                variants={itemVariants}
+                // variants={itemVariants}
                 className="text-2xl sm:text-3xl text-white/90 mb-8 leading-relaxed font-light"
               >
                 Build Your Legacy with Our
@@ -178,7 +168,7 @@ export default function AgentHero() {
 
               {/* Description */}
               <motion.p
-                variants={itemVariants}
+                // variants={itemVariants}
                 className="text-xl text-white/80 mb-12 leading-relaxed font-normal"
               >
                 Unlock unprecedented earning potential while transforming
@@ -188,7 +178,7 @@ export default function AgentHero() {
 
               {/* CTA Buttons */}
               <motion.div
-                variants={itemVariants}
+                // variants={itemVariants}
                 className="flex flex-col sm:flex-row gap-6 mb-12"
               >
                 <motion.div

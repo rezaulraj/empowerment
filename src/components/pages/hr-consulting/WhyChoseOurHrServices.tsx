@@ -86,17 +86,7 @@ export default function WhyChoseOurHrServices() {
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
+  
 
   return (
     <section className="relative py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 overflow-hidden">
@@ -204,7 +194,7 @@ export default function WhyChoseOurHrServices() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
+            //   variants={itemVariants}
               className="group relative"
             >
               {/* Card Background */}
