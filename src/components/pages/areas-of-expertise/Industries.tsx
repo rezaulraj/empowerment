@@ -477,8 +477,11 @@ export default function Industries() {
   ];
 
   return (
-    <section className="py-12 md:py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="industry-explore"
+      className="py-12 md:py-20 bg-white relative overflow-hidden"
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12 md:mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#EF3D54] mb-4">
             Industries We Serve
@@ -500,10 +503,12 @@ export default function Industries() {
     </section>
   );
 }
+
 interface ResponsiveIndustryCardProps {
   industry: Industry;
   index: number;
 }
+
 function ResponsiveIndustryCard({
   industry,
   index,
@@ -543,211 +548,265 @@ function ResponsiveIndustryCard({
   }, [isInView, rotate1, rotate2, rotate3, rotate4]);
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0 }}
-      animate={isInView ? { opacity: 1 } : {}}
-      transition={{ duration: 0.8 }}
-      className={`relative flex flex-col ${
-        isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-      } items-center gap-8 md:gap-12 lg:gap-20 min-h-[300px] md:min-h-[400px] lg:min-h-[500px]`}
-    >
+    <div className="relative">
+      {/* Large Rotating Background Before Each Industry Section */}
+      <div className="absolute -top-20 -left-20 w-96 h-96 opacity-5 z-0">
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{
+            duration: 35,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="w-full h-full"
+        >
+          <Image
+            src="/logo/round.png"
+            alt="Background Logo"
+            width={384}
+            height={384}
+            className="object-contain"
+            style={{
+              filter:
+                "brightness(0) saturate(100%) invert(36%) sepia(47%) saturate(1352%) hue-rotate(316deg) brightness(99%) contrast(83%)",
+            }}
+          />
+        </motion.div>
+      </div>
+
+      {/* Additional Background Elements */}
+      <div className="absolute -bottom-20 -right-20 w-80 h-80 opacity-5 z-0">
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{
+            duration: 45,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="w-full h-full"
+        >
+          <Image
+            src="/logo/round.png"
+            alt="Background Logo"
+            width={320}
+            height={320}
+            className="object-contain"
+            style={{
+              filter:
+                "brightness(0) saturate(100%) invert(36%) sepia(47%) saturate(1352%) hue-rotate(316deg) brightness(99%) contrast(83%)",
+            }}
+          />
+        </motion.div>
+      </div>
+
       <motion.div
-        initial={{ opacity: 0, x: isEven ? -30 : 30 }}
-        animate={isInView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="flex-1 space-y-4 md:space-y-6 w-full"
+        ref={ref}
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.8 }}
+        className={`relative flex flex-col ${
+          isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+        } items-center gap-8 md:gap-12 lg:gap-20 min-h-[300px] md:min-h-[400px] lg:min-h-[500px] z-10`}
       >
-        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#EF3D54] leading-tight">
-          {industry.title}
-        </h3>
+        {/* Content Section */}
+        <motion.div
+          initial={{ opacity: 0, x: isEven ? -30 : 30 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex-1 space-y-4 md:space-y-6 w-full relative z-20"
+        >
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#EF3D54] leading-tight">
+            {industry.title}
+          </h3>
 
-        <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-          {industry.shortDescription}
-        </p>
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+            {industry.shortDescription}
+          </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
-          <div className="space-y-3 md:space-y-4">
-            <h4 className="text-lg sm:text-xl font-semibold text-gray-900">
-              Key Roles
-            </h4>
-            <ul className="space-y-2 md:space-y-3">
-              {industry.keyRoles.map((role: string, i: number) => (
-                <motion.li
-                  key={role}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.3 + i * 0.1 }}
-                  className="flex items-center gap-3 text-gray-700 text-sm sm:text-base"
-                >
-                  <div className="w-2 h-2 bg-[#EF3D54] rounded-full flex-shrink-0"></div>
-                  <span>{role}</span>
-                </motion.li>
-              ))}
-            </ul>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+            <div className="space-y-3 md:space-y-4">
+              <h4 className="text-lg sm:text-xl font-semibold text-gray-900">
+                Key Roles
+              </h4>
+              <ul className="space-y-2 md:space-y-3">
+                {industry.keyRoles.map((role: string, i: number) => (
+                  <motion.li
+                    key={role}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ delay: 0.3 + i * 0.1 }}
+                    className="flex items-center gap-3 text-gray-700 text-sm sm:text-base"
+                  >
+                    <div className="w-2 h-2 bg-[#EF3D54] rounded-full flex-shrink-0"></div>
+                    <span>{role}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+            <div className="space-y-3 md:space-y-4">
+              <h4 className="text-lg sm:text-xl font-semibold text-gray-900">
+                Your Benefits
+              </h4>
+              <ul className="space-y-2 md:space-y-3">
+                {industry.yourBenefits.map((benefit: string, i: number) => (
+                  <motion.li
+                    key={benefit}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ delay: 0.4 + i * 0.1 }}
+                    className="flex items-center gap-3 text-gray-700 text-sm sm:text-base"
+                  >
+                    <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
+                    <span>{benefit}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div className="space-y-3 md:space-y-4">
-            <h4 className="text-lg sm:text-xl font-semibold text-gray-900">
-              Your Benefits
-            </h4>
-            <ul className="space-y-2 md:space-y-3">
-              {industry.yourBenefits.map((benefit: string, i: number) => (
-                <motion.li
-                  key={benefit}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.4 + i * 0.1 }}
-                  className="flex items-center gap-3 text-gray-700 text-sm sm:text-base"
-                >
-                  <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
-                  <span>{benefit}</span>
-                </motion.li>
-              ))}
-            </ul>
+        </motion.div>
+
+        {/* Image Section with Rotating Logos */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="flex-1 relative w-full max-w-2xl mx-auto lg:mx-0"
+        >
+          {/* Large Background Behind Image */}
+          <div className="absolute -inset-10 opacity-5 z-0">
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{
+                duration: 50,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="w-full h-full flex items-center justify-center"
+            >
+              <Image
+                src="/logo/round.png"
+                alt="Background Logo"
+                width={400}
+                height={400}
+                className="object-contain"
+                style={{
+                  filter:
+                    "brightness(0) saturate(100%) invert(36%) sepia(47%) saturate(1352%) hue-rotate(316deg) brightness(99%) contrast(83%)",
+                }}
+              />
+            </motion.div>
           </div>
-        </div>
+
+          <div className="relative rounded-xl md:rounded-2xl overflow-hidden shadow-lg md:shadow-xl bg-gray-100 aspect-video w-full z-20">
+            <Image
+              src={industry.image}
+              alt={industry.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 640px) 90vw, (max-width: 768px) 80vw, (max-width: 1024px) 45vw, 40vw"
+              priority={index === 0}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+          </div>
+
+          {/* Small Rotating Logos Around Image */}
+          <motion.div
+            style={{ rotate: rotate1 }}
+            className="absolute -top-6 -left-4 sm:-top-8 sm:-left-6 lg:-top-14 lg:-left-8 
+                       w-20 h-20 sm:w-28 sm:h-28 lg:w-44 lg:h-44 
+                       rounded-full overflow-hidden z-10"
+          >
+            <Image
+              src={industry.roundImage}
+              alt="Round logo"
+              width={176}
+              height={176}
+              className="w-full h-full object-cover"
+              sizes="(max-width: 640px) 80px, (max-width: 768px) 112px, 176px"
+            />
+          </motion.div>
+
+          <motion.div
+            style={{ rotate: rotate2 }}
+            className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 lg:-top-8 lg:-right-8 
+                       w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28 
+                       rounded-full overflow-hidden z-10"
+          >
+            <Image
+              src={industry.roundImage}
+              alt="Round logo"
+              width={112}
+              height={112}
+              className="w-full h-full object-cover"
+              sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 112px"
+            />
+          </motion.div>
+
+          <motion.div
+            style={{ rotate: rotate3 }}
+            className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 lg:-bottom-8 lg:-left-8 
+                       w-20 h-20 sm:w-24 sm:h-24 lg:w-36 lg:h-36 
+                       rounded-full overflow-hidden z-10"
+          >
+            <Image
+              src={industry.roundImage}
+              alt="Round logo"
+              width={144}
+              height={144}
+              className="w-full h-full object-cover"
+              sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 144px"
+            />
+          </motion.div>
+
+          <motion.div
+            style={{ rotate: rotate4 }}
+            className="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6 lg:-bottom-14 lg:-right-8 
+                       w-20 h-20 sm:w-28 sm:h-28 lg:w-44 lg:h-44 
+                       rounded-full overflow-hidden z-10"
+          >
+            <Image
+              src={industry.roundImage}
+              alt="Round logo"
+              width={176}
+              height={176}
+              className="w-full h-full object-cover"
+              sizes="(max-width: 640px) 80px, (max-width: 768px) 112px, 176px"
+            />
+          </motion.div>
+
+          {/* Floating Border Elements */}
+          <motion.div
+            animate={{
+              y: [0, -10, 0],
+              x: [0, -8, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="hidden sm:block absolute -top-3 -left-3 lg:-top-4 lg:-left-4 
+                       w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 
+                       rounded-full border border-[#EF3D54]/20 pointer-events-none"
+          />
+
+          <motion.div
+            animate={{
+              y: [0, -8, 0],
+              x: [0, 8, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+            className="hidden sm:block absolute -top-2 -right-3 lg:-top-4 lg:-right-4 
+                       w-20 h-20 sm:w-28 sm:h-28 lg:w-36 lg:h-36 
+                       rounded-full border border-[#EF3D54]/20 pointer-events-none"
+          />
+        </motion.div>
       </motion.div>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={isInView ? { opacity: 1, scale: 1 } : {}}
-        transition={{ duration: 0.8, delay: 0.1 }}
-        className="flex-1 relative w-full max-w-2xl mx-auto lg:mx-0"
-      >
-        <div className="relative rounded-xl md:rounded-2xl overflow-hidden shadow-lg md:shadow-xl bg-gray-100 aspect-video w-full z-20">
-          <Image
-            src={industry.image}
-            alt={industry.title}
-            fill
-            className="object-cover"
-            sizes="(max-width: 640px) 90vw, (max-width: 768px) 80vw, (max-width: 1024px) 45vw, 40vw"
-            priority={index === 0}
-          />
-
-          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-        </div>
-
-        <motion.div
-          style={{ rotate: rotate1 }}
-          className="absolute -top-6 -left-4 sm:-top-8 sm:-left-6 lg:-top-14 lg:-left-8 
-                     w-20 h-20 sm:w-28 sm:h-28 lg:w-44 lg:h-44 
-                     rounded-full 
-                      overflow-hidden z-10"
-        >
-          <Image
-            src={industry.roundImage}
-            alt="Round logo"
-            width={176}
-            height={176}
-            className="w-full h-full object-cover"
-            sizes="(max-width: 640px) 80px, (max-width: 768px) 112px, 176px"
-          />
-        </motion.div>
-        <motion.div
-          style={{ rotate: rotate2 }}
-          className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 lg:-top-8 lg:-right-8 
-                     w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28 
-                     rounded-full overflow-hidden z-10"
-        >
-          <Image
-            src={industry.roundImage}
-            alt="Round logo"
-            width={112}
-            height={112}
-            className="w-full h-full object-cover"
-            sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 112px"
-          />
-        </motion.div>
-        <motion.div
-          style={{ rotate: rotate3 }}
-          className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 lg:-bottom-8 lg:-left-8 
-                     w-20 h-20 sm:w-24 sm:h-24 lg:w-36 lg:h-36 
-                     rounded-full overflow-hidden z-10"
-        >
-          <Image
-            src={industry.roundImage}
-            alt="Round logo"
-            width={144}
-            height={144}
-            className="w-full h-full object-cover"
-            sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 144px"
-          />
-        </motion.div>
-        <motion.div
-          style={{ rotate: rotate4 }}
-          className="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6 lg:-bottom-14 lg:-right-8 
-                     w-20 h-20 sm:w-28 sm:h-28 lg:w-44 lg:h-44 
-                     rounded-full overflow-hidden z-10"
-        >
-          <Image
-            src={industry.roundImage}
-            alt="Round logo"
-            width={176}
-            height={176}
-            className="w-full h-full object-cover"
-            sizes="(max-width: 640px) 80px, (max-width: 768px) 112px, 176px"
-          />
-        </motion.div>
-        <motion.div
-          animate={{
-            y: [0, -10, 0],
-            x: [0, -8, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="hidden sm:block absolute -top-3 -left-3 lg:-top-4 lg:-left-4 
-                     w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 
-                     rounded-full border border-[#EF3D54]/20 pointer-events-none"
-        />
-
-        <motion.div
-          animate={{
-            y: [0, -8, 0],
-            x: [0, 8, 0],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-          className="hidden sm:block absolute -top-2 -right-3 lg:-top-4 lg:-right-4 
-                     w-20 h-20 sm:w-28 sm:h-28 lg:w-36 lg:h-36 
-                     rounded-full border border-[#EF3D54]/20 pointer-events-none"
-        />
-        <motion.div
-          animate={{
-            y: [0, 8, 0],
-            x: [0, -6, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-          className="hidden sm:block absolute -bottom-3 -left-3 lg:-bottom-4 lg:-left-4 
-                     w-28 h-28 sm:w-32 sm:h-32 lg:w-44 lg:h-44 
-                     rounded-full border border-[#EF3D54]/20 pointer-events-none"
-        />
-        <motion.div
-          animate={{
-            y: [0, 6, 0],
-            x: [0, 8, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1.5,
-          }}
-          className="hidden sm:block absolute -bottom-3 -right-3 lg:-bottom-4 lg:-right-4 
-                     w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 
-                     rounded-full border border-[#EF3D54]/20 pointer-events-none"
-        />
-      </motion.div>
-    </motion.div>
+    </div>
   );
 }

@@ -493,7 +493,7 @@ export default function TalentAssessment() {
             viewport={{ once: true }}
           >
             {/* Process Background Logo */}
-            <div className="absolute inset-0 opacity-3 rounded-3xl overflow-hidden">
+            <div className="absolute inset-0 opacity-30 rounded-3xl overflow-hidden">
               <motion.div
                 className="w-full h-full flex items-center justify-center"
                 animate={{ rotate: 360 }}
@@ -539,7 +539,7 @@ export default function TalentAssessment() {
                     viewport={{ once: true }}
                   >
                     {/* Step Background Logo */}
-                    <div className="absolute inset-0 opacity-5 rounded-2xl">
+                    <div className="absolute inset-0 opacity-70 rounded-2xl">
                       <motion.div
                         animate={{ rotate: 360 }}
                         transition={{

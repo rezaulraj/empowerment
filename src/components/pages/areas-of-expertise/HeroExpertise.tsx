@@ -5,7 +5,7 @@ import PageTransition from "@/components/animation/PageTransition";
 
 export default function HeroExpertise() {
   const stats = [
-    { number: "15+", label: "Industries Served" },
+    { number: "30+", label: "Industries Served" },
     { number: "500+", label: "Happy Clients" },
     { number: "98%", label: "Client Satisfaction" },
     { number: "24/7", label: "Market Support" },
@@ -113,6 +113,10 @@ export default function HeroExpertise() {
             Ready to find the perfect talent for your industry?
           </motion.p>
           <motion.button
+            onClick={() => {
+              const section = document.querySelector("#industry-explore");
+              section?.scrollIntoView({ behavior: "smooth" });
+            }}
             whileHover={{
               scale: 1.05,
               boxShadow: "0 20px 40px rgba(255, 255, 255, 0.3)",

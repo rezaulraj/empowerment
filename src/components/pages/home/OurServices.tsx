@@ -120,13 +120,41 @@ const OurServices = () => {
       id="allservices"
       className="relative py-12 sm:py-16 md:py-20 overflow-hidden"
     >
+      {/* Single Large Rotating Background */}
+      <div className="absolute inset-0 opacity-1 z-0">
+        <div className="w-full h-full flex items-center justify-center">
+          <motion.div
+            className="w-[1100px] h-[1100px]"
+            animate={{ rotate: 360 }}
+            transition={{
+              duration: 40,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+            <Image
+              src="/logo/round.png"
+              alt="Background Pattern"
+              width={900}
+              height={900}
+              className="object-contain"
+              style={{
+                filter:
+                  "brightness(0) saturate(100%) invert(36%) sepia(47%) saturate(1352%) hue-rotate(316deg) brightness(99%) contrast(83%)",
+              }}
+              priority
+            />
+          </motion.div>
+        </div>
+      </div>
+
       {/* Split Background */}
-      <div className="absolute inset-0">
-        <div className="h-1/2 bg-gray-50" />
+      <div className="absolute inset-0 z-0">
+        <div className="h-1/2 bg-gray-50/80" />
         <div className="h-1/2 bg-primary/100" />
       </div>
 
-      <div className="container relative mx-auto px-4">
+      <div className="container relative mx-auto px-4 z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
