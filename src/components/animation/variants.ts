@@ -1,4 +1,6 @@
-export const fadeInLeft = {
+import { Variants } from "framer-motion";
+
+export const fadeInLeft: Variants = {
   initial: {
     opacity: 0,
     x: -20,
@@ -13,7 +15,7 @@ export const fadeInLeft = {
   },
 };
 
-export const fadeInRight = {
+export const fadeInRight: Variants = {
   initial: {
     opacity: 0,
     x: 20,
@@ -28,7 +30,7 @@ export const fadeInRight = {
   },
 };
 
-export const fadeInUp = {
+export const fadeInUp: Variants = {
   initial: {
     y: 60,
     opacity: 0,
@@ -43,7 +45,7 @@ export const fadeInUp = {
   },
 };
 
-export const fadeInBottom = {
+export const fadeInBottom: Variants = {
   initial: {
     opacity: 0,
     y: 20,
@@ -58,7 +60,7 @@ export const fadeInBottom = {
   },
 };
 
-export const organizationContainerVariants = {
+export const organizationContainerVariants: Variants = {
   hidden: {
     opacity: 0,
   },
@@ -73,7 +75,7 @@ export const organizationContainerVariants = {
   },
 };
 
-export const organizationItemVariants = {
+export const organizationItemVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 30,
@@ -88,7 +90,7 @@ export const organizationItemVariants = {
   },
 };
 
-export const staggerContainer = {
+export const staggerContainer: Variants = {
   hidden: {},
   show: {
     transition: {
@@ -97,7 +99,7 @@ export const staggerContainer = {
   },
 };
 
-export const fadeInItem = {
+export const fadeInItem: Variants = {
   hidden: { y: 20, opacity: 0 },
   show: {
     y: 0,
